@@ -17,7 +17,7 @@ const cloudwatchLogs = new AWS.CloudWatchLogs();
 function logRequests(req, res, next) {
   const logGroupName = 'NODE_APP';
   const logStreamName = 'NODE_APP_STREAM';
-  const logMessage = `[${new Date().toISOString()}] ${req.method} ${req.url} ${req.get('user-agent')} ${req.get('x-forwarded-for')}`;
+  const logMessage = `[${new Date().toISOString()}] ${req.method} ${req.url} ${req.get('user-agent')}`;
 
   const params = {
     logGroupName: logGroupName,
@@ -43,7 +43,7 @@ function logRequests(req, res, next) {
 
 app.use(logRequests);
 
-app.listen(5001, () => {
+app.listen(5002, () => {
   console.log("Server is running on port 5001");
 });
 
