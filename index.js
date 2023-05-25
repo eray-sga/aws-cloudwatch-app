@@ -43,7 +43,7 @@ function logRequests(req, res, next) {
 
 app.use(logRequests);
 
-app.listen(5002, () => {
+app.listen(5001, () => {
   console.log("Server is running on port 5001");
 });
 
